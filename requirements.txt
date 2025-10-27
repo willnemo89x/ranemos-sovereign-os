@@ -1,0 +1,1 @@
+requests\ngoogle-api-python-client\ngoogle-auth\nopenai\n

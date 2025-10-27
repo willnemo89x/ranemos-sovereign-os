@@ -1,0 +1,118 @@
+{
+  "parent": {
+    "type": "page_id",
+    "page_id": "REPLACE_WITH_PARENT_PAGE_ID"
+  },
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Agent Queue"
+      }
+    }
+  ],
+  "properties": {
+    "Name": {
+      "title": {}
+    },
+    "AgentType": {
+      "select": {
+        "options": [
+          {
+            "name": "Content",
+            "color": "blue"
+          },
+          {
+            "name": "LeadGen",
+            "color": "green"
+          },
+          {
+            "name": "Research",
+            "color": "yellow"
+          },
+          {
+            "name": "Ops",
+            "color": "orange"
+          },
+          {
+            "name": "Finance",
+            "color": "purple"
+          }
+        ]
+      }
+    },
+    "Prompt / Context": {
+      "rich_text": {}
+    },
+    "Inputs": {
+      "files": {}
+    },
+    "PublishMode": {
+      "select": {
+        "options": [
+          {
+            "name": "Auto",
+            "color": "green"
+          },
+          {
+            "name": "Needs Review",
+            "color": "red"
+          }
+        ]
+      }
+    },
+    "ConfidenceGate": {
+      "number": {
+        "format": "number"
+      }
+    },
+    "Status": {
+      "select": {
+        "options": [
+          {
+            "name": "Queued",
+            "color": "blue"
+          },
+          {
+            "name": "Running",
+            "color": "yellow"
+          },
+          {
+            "name": "Needs Review",
+            "color": "orange"
+          },
+          {
+            "name": "Done",
+            "color": "green"
+          },
+          {
+            "name": "Blocked",
+            "color": "red"
+          }
+        ]
+      }
+    },
+    "Due": {
+      "date": {}
+    },
+    "ProofURL": {
+      "url": {}
+    },
+    "Ally": {
+      "people": {}
+    },
+    "BudgetTokens": {
+      "number": {
+        "format": "number"
+      }
+    },
+    "Confidence": {
+      "number": {
+        "format": "number"
+      }
+    },
+    "ProofNote": {
+      "rich_text": {}
+    }
+  }
+}

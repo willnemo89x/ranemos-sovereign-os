@@ -1,0 +1,33 @@
+name: ranemos-agents
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # every 15 minutes UTC
+  workflow_dispatch: {}
+
+jobs:
+  run-agents:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests google-api-python-client google-auth openai
+
+      - name: Run agents
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_AGENT_DB: ${{ secrets.NOTION_AGENT_DB }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+          DRIVE_SA_JSON: ${{ secrets.DRIVE_SA_JSON }}
+          GDRIVE_PARENT_FOLDER_ID: ${{ secrets.GDRIVE_PARENT_FOLDER_ID }}
+          GOOGLE_WORKSPACE_IMPERSONATE: ${{ secrets.GOOGLE_WORKSPACE_IMPERSONATE }}
+        run: |
+          python agents/run.py
